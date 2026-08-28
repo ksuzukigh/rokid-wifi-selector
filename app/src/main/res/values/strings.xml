@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wi-Fi Selector</string>
+    <string name="checking">確認中…</string>
+    <string name="connected_label">接続中</string>
+    <string name="permission_needed">許可が必要です</string>
+    <string name="permission_reason">Wi-Fi名を表示するため</string>
+    <string name="permission_action">位置情報を許可してください</string>
+    <string name="permission_retry">アプリを開き直して許可できます</string>
+    <string name="permission_title">Wi-Fi名の表示</string>
+    <string name="permission_prompt">Androidの確認画面で</string>
+    <string name="permission_privacy">現在地の記録・送信は行いません</string>
+    <string name="enabling_wifi">Wi-Fiをオンにしています…</string>
+    <string name="please_wait">そのままお待ちください</string>
+    <string name="checking_connection">接続先を確認中…</string>
+    <string name="nearby_saved_wifi">付近の保存済みWi-Fi</string>
+    <string name="no_alternative">ほかに見つかりません</string>
+    <string name="register_in_hi_rokid">登録はHi Rokidで行います</string>
+    <string name="switch_target">切替先</string>
+    <string name="position_format">%1$d / %2$d</string>
+    <string name="choose_and_connect">左右へスワイプ：選ぶ　1回押す：接続</string>
+    <string name="connect_once">1回押す：接続</string>
+    <string name="connecting">接続しています…</string>
+    <string name="switch_start_failed">切替を開始できませんでした</string>
+    <string name="connected_success">接続しました</string>
+    <string name="returning_to_apps">アプリ一覧へ戻ります</string>
+    <string name="original_network">元の接続先</string>
+    <string name="connection_failed">接続できませんでした</string>
+    <string name="restoring_original">元のWi-Fiへ戻します</string>
+    <string name="retry_later">しばらくしてから再試行してください</string>
+    <string name="wifi_unavailable">Wi-Fi機能を取得できません</string>
+    <string name="double_tap_to_return">ダブルタップで戻れます</string>
+</resources>

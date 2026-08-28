@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.application'
+}
+
+def releaseKeystorePath = System.getenv('ROKID_WIFI_SELECTOR_KEYSTORE') ?:
+        System.getProperty('user.home') + '/keys/rokid-wifi-selector-release.jks'
+def releaseStorePassword = System.getenv('ROKID_WIFI_SELECTOR_STORE_PASSWORD')
+def releaseKeyPassword = System.getenv('ROKID_WIFI_SELECTOR_KEY_PASSWORD')
+
+android {
+    namespace 'io.github.ksuzukigh.rokidwifiselector'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'io.github.ksuzukigh.rokidwifiselector'
+        minSdk 26
+        // RV101（Android 12）で保存済みWi-Fiを選択する互換APIを使用する。
+        // Google Play向けではなく、Rokid専用APKとしてHi Rokidから導入する。
+        targetSdk 28
+        versionCode 1
+        versionName '1.0.0'
+        testInstrumentationRunner 'android.app.InstrumentationTestRunner'
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(releaseKeystorePath)
+            storePassword releaseStorePassword
+            keyAlias 'rokid'
+            keyPassword releaseKeyPassword
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        disable 'ExpiredTargetSdkVersion'
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+}
